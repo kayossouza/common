@@ -1,4 +1,7 @@
 mod lexer;
+mod parser;
+mod interpreter;
+mod ast;
 
 use crate::lexer::{Lexer, TokenKind};
 

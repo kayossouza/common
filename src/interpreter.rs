@@ -5,7 +5,7 @@ pub struct Interpreter;
 impl Interpreter {
     pub fn interpret(node: ASTNode) {
         match node {
-            ASTNode::Variable(name) => println!("Variable: {}", name),
+            ASTNode::VariableDeclaration { name, value } => println!("Variable Declaration: {} = {:?}", name, value),
             ASTNode::Number(value) => println!("Number: {}", value),
             ASTNode::Operation(left, right) => {
                 println!("Operation:");
@@ -36,6 +36,10 @@ impl Interpreter {
                 // Placeholder: Access 'state_name' within 'component_or_function_name'
                 println!("Use state: {} in {}", state_name, component_or_function_name); 
             }
+            ASTNode::String(_) => todo!(),
+            ASTNode::Boolean(_) => todo!(),
+            ASTNode::Object => todo!(),
+            ASTNode::Array => todo!(),
         }
     }
 }
